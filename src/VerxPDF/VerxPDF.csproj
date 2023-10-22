@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Version>1.0.0</Version>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\VerxPDF.Core\VerxPDF.Core.csproj" />
+		<ProjectReference Include="..\VerxPDF.Domain\VerxPDF.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Flexcon">
+	    <HintPath>..\DLLs\Flexcon.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+</Project>
