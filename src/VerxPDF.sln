@@ -5,9 +5,13 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerxPDF.Domain", "VerxPDF.Domain\VerxPDF.Domain.csproj", "{20F01DDB-D313-4F2A-A20F-6708D415CC87}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerxPDF.Core", "VerxPDF.Core\VerxPDF.Core.csproj", "{C8CF55B8-CFA5-47B4-894C-6FA48FD75BF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerxPDF.Core", "Infrastructure\VerxPDF.Core\VerxPDF.Core.csproj", "{C8CF55B8-CFA5-47B4-894C-6FA48FD75BF4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerxPDF", "VerxPDF\VerxPDF.csproj", "{16D89A30-66E9-4EF8-BA37-487230387E72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerxPDF", "Infrastructure\VerxPDF\VerxPDF.csproj", "{16D89A30-66E9-4EF8-BA37-487230387E72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerxPDF.Persistence", "Infrastructure\VerxPDF.Persistence\VerxPDF.Persistence.csproj", "{C5A54A4B-E5BB-4BCF-86D8-B5211E6E99DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VerxPDF.Application", "VerxPDF.Application\VerxPDF.Application.csproj", "{2B5AD359-2E9A-4C96-ADCE-C3C7591B9AB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,22 @@ Global
 		{16D89A30-66E9-4EF8-BA37-487230387E72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16D89A30-66E9-4EF8-BA37-487230387E72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16D89A30-66E9-4EF8-BA37-487230387E72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A54A4B-E5BB-4BCF-86D8-B5211E6E99DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A54A4B-E5BB-4BCF-86D8-B5211E6E99DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A54A4B-E5BB-4BCF-86D8-B5211E6E99DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A54A4B-E5BB-4BCF-86D8-B5211E6E99DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B5AD359-2E9A-4C96-ADCE-C3C7591B9AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5AD359-2E9A-4C96-ADCE-C3C7591B9AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5AD359-2E9A-4C96-ADCE-C3C7591B9AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5AD359-2E9A-4C96-ADCE-C3C7591B9AB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8CF55B8-CFA5-47B4-894C-6FA48FD75BF4} = {3CBBCAA4-EF34-4A2E-B53E-1CA31E573376}
+		{16D89A30-66E9-4EF8-BA37-487230387E72} = {3CBBCAA4-EF34-4A2E-B53E-1CA31E573376}
+		{C5A54A4B-E5BB-4BCF-86D8-B5211E6E99DF} = {3CBBCAA4-EF34-4A2E-B53E-1CA31E573376}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A7839147-7800-4E40-874D-78BE72DDE819}

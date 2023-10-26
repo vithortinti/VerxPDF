@@ -2,6 +2,9 @@
 using Flexcon.Dependences;
 using VerxPDF.Core.Services;
 using VerxPDF.Domain.Models;
+using VerxPDF.Application.Configurations;
+using VerxPDF.Domain.Interfaces.Configuration.ImageSize;
+using VerxPDF.Persistence.Repository;
 
 namespace VerxPDF.Executors.ConvertToJpg
 {
@@ -12,7 +15,13 @@ namespace VerxPDF.Executors.ConvertToJpg
         private string _pdfFile;
         private string _destination;
         private PageSize _pageSize;
+        private IImageSizesConfiguration _imageSizesConfiguration;
         private PdfToJpgService _service;
+
+        public ConvertToJpgExecutor()
+        {
+            _imageSizesConfiguration = new ImageSizesConfiguration(new ImageSizeJsonRepository());
+        }
 
         public override void Execute(string[] args)
         {
@@ -62,10 +71,12 @@ namespace VerxPDF.Executors.ConvertToJpg
         [Parameter("-s")]
         public void Size(string size)
         {
-            if (size.Contains("x", StringComparison.InvariantCultureIgnoreCase))
+            var imageSize = _imageSizesConfiguration.Get(size);
+
+            if (size.Contains('x', StringComparison.InvariantCultureIgnoreCase))
             {
                 // Width x Height
-                int[] wh = size.Split("x")
+                int[] wh = size.Split('x')
                     .Select(x => Convert.ToInt32(x))
                     .ToArray();
 
@@ -81,30 +92,16 @@ namespace VerxPDF.Executors.ConvertToJpg
                     throw new Exception("The offered size parameters must be greater than 0 with integer values.");
                 }
             }
-            else if (size == "a4")
+            else if (imageSize is not null)
             {
-                int width = 2480;
-                int height = 3508;
-
-                _pageSize = new PageSize(width, height);
-            }
-            else if (size == "full-hd")
-            {
-                int width = 1920;
-                int height = 1080;
-
-                _pageSize = new PageSize(width, height);
-            }
-            else if (size == "slide")
-            {
-                int width = 960;
-                int height = 720;
+                int width = imageSize.Size.Width;
+                int height = imageSize.Size.Height;
 
                 _pageSize = new PageSize(width, height);
             }
             else
             {
-                throw new Exception($"Invalid size parameter '{size}'.");
+                throw new Exception($"There is no size {size}, but you can create a custom size.");
             }
         }
 

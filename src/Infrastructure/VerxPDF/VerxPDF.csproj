@@ -9,14 +9,20 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\VerxPDF.Application\VerxPDF.Application.csproj" />
+		<ProjectReference Include="..\..\VerxPDF.Domain\VerxPDF.Domain.csproj" />
 		<ProjectReference Include="..\VerxPDF.Core\VerxPDF.Core.csproj" />
-		<ProjectReference Include="..\VerxPDF.Domain\VerxPDF.Domain.csproj" />
+		<ProjectReference Include="..\VerxPDF.Persistence\VerxPDF.Persistence.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Reference Include="Flexcon">
-	    <HintPath>..\DLLs\Flexcon.dll</HintPath>
+	    <HintPath>..\..\DLLs\Flexcon.dll</HintPath>
 	  </Reference>
+
+	  <None Update="./Configs/image-sizes.json">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

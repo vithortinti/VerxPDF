@@ -1,0 +1,23 @@
+[
+  {
+    "Name": "slide",
+    "Size": {
+      "Width": 960,
+      "Height": 720
+    }
+  },
+  {
+    "Name": "full-hd",
+    "Size": {
+      "Width": 1920,
+      "Height": 1080
+    }
+  },
+  {
+    "Name": "a4",
+    "Size": {
+      "Width": 2480,
+      "Height": 3508
+    }
+  }
+]

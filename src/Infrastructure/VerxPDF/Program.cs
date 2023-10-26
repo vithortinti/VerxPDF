@@ -19,6 +19,6 @@ else
     catch (Exception ex)
     {
         string message = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
-        Message.WriteLineError($"An unexpected error has occurred during execution. \nDetails: {message}\nType --help for help.");
+        Message.WriteLineError($"An unexpected error has occurred during execution. \nDetails: {message}\nType \"verxpdf --help\" for help.");
     }
 }
