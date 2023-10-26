@@ -13,7 +13,6 @@ namespace VerxPDF.Persistence.Repository
         public ImageSizeJsonRepository()
         {
             string directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
-            Console.WriteLine(directory);
             string file = directory + "\\Configs\\image-sizes.json";
             _file = file;
             if (!File.Exists(file))
