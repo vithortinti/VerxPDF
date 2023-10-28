@@ -18,7 +18,7 @@ namespace VerxPDF.Executors.Version
 
         public override void Help()
         {
-            Console.WriteLine("Version:");
+            Console.WriteLine("VERSION:");
             Console.WriteLine("--version: App version");
             Console.WriteLine("HOW TO USE: verxpdf --version");
         }
