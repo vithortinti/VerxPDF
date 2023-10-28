@@ -55,7 +55,7 @@ Before demonstrating, here are some standard parameters that should be used in a
 ```bash
 verxpdf image [-p <PDF-FILE>] [-d <DESTINATION-DIRECTORY>] [-s <SIZE> OPTIONAL] [-q <QUALITY> OPTIONAL]
 ```
--s: Image size parameter. You can see more about the sizes in the [image-config]() option. <br>
+-s: Image size parameter. You can see more about the sizes in the [image-config](#image-configuration) option. <br>
 -q: Image quality parameter. Must to be used with size parameter.
 - low: Low image quality (faster) - Divide the number of pixels by 4;
 - normal: Normal image quality (default option) - Uses the size specified in the size parameter;
