@@ -71,8 +71,6 @@ namespace VerxPDF.Executors.ConvertToJpg
         [Parameter("-s")]
         public void Size(string size)
         {
-            var imageSize = _imageSizesConfiguration.Get(size);
-
             if (size.Contains('x', StringComparison.InvariantCultureIgnoreCase))
             {
                 // Width x Height
@@ -92,16 +90,13 @@ namespace VerxPDF.Executors.ConvertToJpg
                     throw new Exception("The offered size parameters must be greater than 0 with integer values.");
                 }
             }
-            else if (imageSize is not null)
+            else
             {
+                var imageSize = _imageSizesConfiguration.Get(size);
                 int width = imageSize.Size.Width;
                 int height = imageSize.Size.Height;
 
                 _pageSize = new PageSize(width, height);
-            }
-            else
-            {
-                throw new Exception($"There is no size {size}, but you can create a custom size.");
             }
         }
 
