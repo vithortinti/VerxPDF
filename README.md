@@ -31,7 +31,7 @@ This session contains the steps for using and starting the application.
 ```
 git clone https://github.com/vithortinti/VerxPDF.git
 ```
-3. Check that the Flexcon library is added to the application. If it isn't, you can get it here, or add it via the [/src/DLLs](https://github.com/vithortinti/VerxPDF/tree/main/src/DLLs) repository path.
+3. Check that the Flexcon library is added to the application. If it isn't, you can get it here, or add it via the [DLLs](/src/DLLs) repository path.
 4. Now you can run the existing commands in the application, just do the following:
 ```bash
 dotnet run <EXECUTOR-NAME> [PARAMETERS]
@@ -45,9 +45,8 @@ In this section, the application's features and how they are used will be detail
 
 Before demonstrating, here are some standard parameters that should be used in all executors:
 
--p (Required): Parameter used to identify which PDF document will be used. 
-
--d (Required): Parameter used to indicate where the modifications made to the application will be placed.
+-p (Required): Parameter used to identify which PDF document will be used. <br>
+-d (Required): Parameter used to indicate where the modifications made to the application will be placed. <br>
 
 > Note: The parameters have no defined order of use, it doesn't matter if you use them at the beginning or at the end of the command line, what matters is that the required parameters are specified. Except for the resource name, it should always be the first to be specified.
 
@@ -56,10 +55,9 @@ Before demonstrating, here are some standard parameters that should be used in a
 verxpdf image [-p <PDF-FILE>] [-d <DESTINATION-DIRECTORY>] [-s <SIZE> OPTIONAL] [-q <QUALITY> OPTIONAL]
 ```
 -s: Image size parameter. You can see more about the sizes in the [image-config](#image-configuration) option. <br>
--q: Image quality parameter. Must to be used with size parameter.
-- low: Low image quality (faster) - Divide the number of pixels by 4;
-- normal: Normal image quality (default option) - Uses the size specified in the size parameter;
-- high: High image quality (slower) - Multiplies the number of pixels by 4.
+- [width]x[height]: Custom image size when converting PDF to image. <br>
+
+-q: Image quality parameter. Multiplies the image size by the integer entered.
 
 ### Image Configuration
 ```bash
@@ -70,6 +68,33 @@ verxpdf image-config [--create-size <SIZE-NAME> <SIZE> | --update-size <SIZE-NAM
 --update-size: Updates a configured size. <br>
 --show-sizes: Shows all configured sizes. <br>
 --show-size: Shows a configured size. <br>
+
+The application already comes with some preconfigured sizes:
+```json
+[
+  {
+    "Name": "slide",
+    "Size": {
+      "Width": 960,
+      "Height": 720
+    }
+  },
+  {
+    "Name": "full-hd",
+    "Size": {
+      "Width": 1920,
+      "Height": 1080
+    }
+  },
+  {
+    "Name": "a4",
+    "Size": {
+      "Width": 2480,
+      "Height": 3508
+    }
+  }
+]
+```
 
 ### Merge
 ```bash
