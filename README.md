@@ -55,16 +55,21 @@ Before demonstrating, here are some standard parameters that should be used in a
 ```bash
 verxpdf image [-p <PDF-FILE>] [-d <DESTINATION-DIRECTORY>] [-s <SIZE> OPTIONAL] [-q <QUALITY> OPTIONAL]
 ```
--s: Image size parameter.
-- slide: Creates a JPG image with size 960x720;
-- full-hd: Creates a JPG image with size 1920x1080;
-- a4: Creates a JPG image with size 2480x3508;
-- {Width}x{Height}: Creates a JPG image with the specified size in pixels. Example: 1000x1000.
-
+-s: Image size parameter. You can see more about the sizes in the [image-config](#image-configuration) option. <br>
 -q: Image quality parameter. Must to be used with size parameter.
 - low: Low image quality (faster) - Divide the number of pixels by 4;
 - normal: Normal image quality (default option) - Uses the size specified in the size parameter;
 - high: High image quality (slower) - Multiplies the number of pixels by 4.
+
+### Image Configuration
+```bash
+verxpdf image-config [--create-size <SIZE-NAME> <SIZE> | --update-size <SIZE-NAME> <NEW-SIZE> | --delete-size <SIZE-NAME> | --show-size <SIZE-NAME> | --show-sizes]
+```
+--create-size: Stores a custom size for the image it will be converted into with the name you choose. <br>
+--delete-size: Deletes a configured size. <br>
+--update-size: Updates a configured size. <br>
+--show-sizes: Shows all configured sizes. <br>
+--show-size: Shows a configured size. <br>
 
 ### Merge
 ```bash
