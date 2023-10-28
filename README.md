@@ -45,9 +45,8 @@ In this section, the application's features and how they are used will be detail
 
 Before demonstrating, here are some standard parameters that should be used in all executors:
 
--p (Required): Parameter used to identify which PDF document will be used. 
-
--d (Required): Parameter used to indicate where the modifications made to the application will be placed.
+-p (Required): Parameter used to identify which PDF document will be used. <br>
+-d (Required): Parameter used to indicate where the modifications made to the application will be placed. <br>
 
 > Note: The parameters have no defined order of use, it doesn't matter if you use them at the beginning or at the end of the command line, what matters is that the required parameters are specified. Except for the resource name, it should always be the first to be specified.
 
@@ -56,7 +55,7 @@ Before demonstrating, here are some standard parameters that should be used in a
 verxpdf image [-p <PDF-FILE>] [-d <DESTINATION-DIRECTORY>] [-s <SIZE> OPTIONAL] [-q <QUALITY> OPTIONAL]
 ```
 -s: Image size parameter. You can see more about the sizes in the [image-config](#image-configuration) option. <br>
-- [width]x[height]: Custom image size when converting PDF to image.
+- [width]x[height]: Custom image size when converting PDF to image. <br>
 -q: Image quality parameter. Multiplies the image size by the integer entered.
 
 ### Image Configuration
