@@ -132,4 +132,5 @@ $RECYCLE.BIN/
 
 _NCrunch*
 .vs
-/src/VerxPDF/Properties/launchSettings.json
+/src/Infrastructure/VerxPDF/Properties/launchSettings.json
+/src/.vscode/*

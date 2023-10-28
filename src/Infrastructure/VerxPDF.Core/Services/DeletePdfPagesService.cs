@@ -20,6 +20,11 @@ namespace VerxPDF.Core.Services
             _newPdfFileName = Path.GetFileNameWithoutExtension(pdf) + "-DltPages.pdf";
         }
 
+        /// <summary>
+        /// Delete a single page from PDF file.
+        /// </summary>
+        /// <param name="page"></param>
+        /// <param name="saveDirectory"></param>
         public void DeletePage(int page, string saveDirectory = null!)
         {
             page -= 1;
@@ -44,6 +49,13 @@ namespace VerxPDF.Core.Services
             }
         }
 
+        /// <summary>
+        /// Delete a range of pages from PDF file.
+        /// </summary>
+        /// <param name="firstPage"></param>
+        /// <param name="lastPage"></param>
+        /// <param name="saveDirectory"></param>
+        /// <exception cref="InvalidOperationException"></exception>
         public void DeletePages(int firstPage, int lastPage, string saveDirectory = null!)
         {
             if (firstPage == 1 && lastPage == _pdfDocument.Pages.Count)
@@ -60,6 +72,39 @@ namespace VerxPDF.Core.Services
                     if (i >= firstPage && i <= lastPage)
                     {
                         Console.WriteLine($"Delete page {i + 1}");
+                        continue;
+                    }
+
+                    newPdf.AddPage(_pdfDocument.Pages[i]);
+                }
+
+                if (string.IsNullOrEmpty(saveDirectory))
+                    newPdf.Save(Directory.GetCurrentDirectory() + "\\" + _newPdfFileName);
+                else
+                    newPdf.Save(saveDirectory + "\\" + _newPdfFileName);
+            }
+        }
+
+        /// <summary>
+        /// Delete pages from PDF file.
+        /// </summary>
+        /// <param name="pages"></param>
+        /// <param name="saveDirectory"></param>
+        public void DeletePages(int[] pages, string saveDirectory = null!)
+        {
+            pages = pages.Select(x => x - 1).ToArray();
+
+            using (PdfDocument newPdf = new PdfDocument())
+            {
+                Console.WriteLine("Creating new PDF File.");
+                int arrIndex = 0;
+                for (int i = 0; i < _pdfDocument.Pages.Count; i++)
+                {
+                    if (pages[arrIndex] == i)
+                    {
+                        Console.WriteLine($"Delete page {i + 1}");
+                        arrIndex++;
+                        if (arrIndex >= pages.Length) arrIndex--; // Prevents out of bounds exception
                         continue;
                     }
 
