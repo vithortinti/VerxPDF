@@ -67,7 +67,7 @@ verxpdf image-config [--create-size <SIZE-NAME> <SIZE> | --update-size <SIZE-NAM
 --delete-size: Deletes a configured size. <br>
 --update-size: Updates a configured size. <br>
 --show-sizes: Shows all configured sizes. <br>
---show-size: Shows a configured size. <br><br>
+--show-size: Shows a configured size. <br>
 
 The application already comes with some preconfigured sizes:
 ```json
