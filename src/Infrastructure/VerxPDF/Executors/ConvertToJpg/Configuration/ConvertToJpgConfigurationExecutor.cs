@@ -146,7 +146,7 @@ namespace VerxPDF.Executors.ConvertToJpg.Configuration
 
         public override void Help()
         {
-            Console.WriteLine("Image Configuration:");
+            Console.WriteLine("IMAGE CONFIGURATION:");
             Console.WriteLine("image-config: Configuration when converting PDF to images.");
             Console.WriteLine("--create-size: Stores a custom size for the image it will be converted into with the name you choose.");
             Console.WriteLine("--delete-size: Deletes a configured size.");
