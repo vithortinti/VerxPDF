@@ -56,6 +56,7 @@ verxpdf image [-p <PDF-FILE>] [-d <DESTINATION-DIRECTORY>] [-s <SIZE> OPTIONAL] 
 ```
 -s: Image size parameter. You can see more about the sizes in the [image-config](#image-configuration) option. <br>
 - [width]x[height]: Custom image size when converting PDF to image. <br>
+
 -q: Image quality parameter. Multiplies the image size by the integer entered.
 
 ### Image Configuration
