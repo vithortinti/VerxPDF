@@ -48,7 +48,7 @@ namespace VerxPDF.Executors.Help
         {
             Console.WriteLine("HELP:");
             Console.WriteLine("--help: Help parameter, which shows all available options and parameters.");
-            Console.WriteLine("-- HOW TO USE: verxpdf --help [<OPTION> OPTIONAL]");
+            Console.WriteLine("HOW TO USE: verxpdf --help [<OPTION> OPTIONAL]");
             Console.WriteLine("The parameters have a defined order of use.");
         }
     }
