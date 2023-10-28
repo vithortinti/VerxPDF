@@ -110,26 +110,13 @@ namespace VerxPDF.Executors.ConvertToJpg
         /// </summary>
         /// <param name="quality"></param>
         [Parameter("-q", ReferenceTo = "-s")]
-        public void Quality(string quality)
+        public void Quality(int quality)
         {
-            if (string.IsNullOrEmpty(quality)) throw new Exception("Quality parameter value not set.");
+            if (quality <= 0) throw new ArgumentNullException("Quality must be greater than 0.");
 
-            switch (quality)
-            {
-                case "high":
-                    _pageSize.Width *= 4;
-                    _pageSize.Height *= 4;
-                    break;
-                case "normal":
-                    // Nothing changes
-                    break;
-                case "low":
-                    _pageSize.Width /= 4;
-                    _pageSize.Height /= 4;
-                    break;
-                default:
-                    throw new Exception($"Invalid image quality: {(quality == string.Empty ? "Unspecified quality" : quality)}.");
-            }
+            // Multiplies the pixels
+            _pageSize.Width *= quality;
+            _pageSize.Height *= quality;
         }
 
         public override void Help()
@@ -140,10 +127,7 @@ namespace VerxPDF.Executors.ConvertToJpg
             Console.WriteLine("-d: Save directory.");
             Console.WriteLine("-s: Image size parameter (optional). You can see more size options with \"verxpdf --help image-config\".");
             Console.WriteLine("{Width}x{Height}: Creates a JPG image with the specified size in pixels. Example: 1000x1000.");
-            Console.WriteLine("-q: Image quality parameter (optional). Must to be used with size parameter.");
-            Console.WriteLine("\tlow: Low image quality (faster) - Divide the number of pixels by 4;");
-            Console.WriteLine("\tnormal: Normal image quality (default option) - Uses the size specified in the size parameter;");
-            Console.WriteLine("\thigh: High image quality (slower) - Multiplies the number of pixels by 4.");
+            Console.WriteLine("-q: Image quality parameter (optional). Multiplies the image size by the integer entered.");
             Console.WriteLine("HOW TO USE: verxpdf image [-p <PDF-FILE>] [-d <DESTINATION-DIRECTORY>] [-s <SIZE> OPTIONAL] [-q <QUALITY> OPTIONAL]");
             Console.WriteLine("The parameters do not have a defined order of use, except for the main parameter \"image\".");
         }
