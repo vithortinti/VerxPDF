@@ -67,7 +67,34 @@ verxpdf image-config [--create-size <SIZE-NAME> <SIZE> | --update-size <SIZE-NAM
 --delete-size: Deletes a configured size. <br>
 --update-size: Updates a configured size. <br>
 --show-sizes: Shows all configured sizes. <br>
---show-size: Shows a configured size. <br>
+--show-size: Shows a configured size. <br><br>
+
+The application already comes with some preconfigured sizes:
+```json
+[
+  {
+    "Name": "slide",
+    "Size": {
+      "Width": 960,
+      "Height": 720
+    }
+  },
+  {
+    "Name": "full-hd",
+    "Size": {
+      "Width": 1920,
+      "Height": 1080
+    }
+  },
+  {
+    "Name": "a4",
+    "Size": {
+      "Width": 2480,
+      "Height": 3508
+    }
+  }
+]
+```
 
 ### Merge
 ```bash
