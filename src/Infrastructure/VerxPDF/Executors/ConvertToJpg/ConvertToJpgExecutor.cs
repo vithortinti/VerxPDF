@@ -134,22 +134,18 @@ namespace VerxPDF.Executors.ConvertToJpg
 
         public override void Help()
         {
-            Console.WriteLine("Image:");
-            Console.WriteLine("\t image: Convert PDF to JPG files.");
-            Console.WriteLine("\t -p: Pdf file.");
-            Console.WriteLine("\t -d: Save directory.");
-            Console.WriteLine("\t -s: Image size parameter (optional).");
-            Console.WriteLine("\t\t slide: Creates a JPG image with size 960x720;");
-            Console.WriteLine("\t\t full-hd: Creates a JPG image with size 1920x1080;");
-            Console.WriteLine("\t\t a4: Creates a JPG image with size 2480x3508;");
-            Console.WriteLine("\t\t {Width}x{Height}: Creates a JPG image with the specified size in pixels. Example: 1000x1000.");
-            Console.WriteLine("\t -q: Image quality parameter (optional). Must to be used with size parameter.");
-            Console.WriteLine("\t\t low: Low image quality (faster) - Divide the number of pixels by 4;");
-            Console.WriteLine("\t\t normal: Normal image quality (default option) - Uses the size specified in the size parameter;");
-            Console.WriteLine("\t\t high: High image quality (slower) - Multiplies the number of pixels by 4.");
-            Console.WriteLine("\t -- HOW TO USE: verxpdf image [-p <PDF-FILE>] [-d <DESTINATION-DIRECTORY>] [-s <SIZE> OPTIONAL] [-q <QUALITY> OPTIONAL]");
-            Console.WriteLine("\t -- EXAMPLE: verxpdf image -p C:\\File.pdf -d C:\\Folder -s a4 -q normal");
-            Console.WriteLine("\t The parameters do not have a defined order of use, except for the main parameter \"image\".");
+            Console.WriteLine("PDF TO JPG:");
+            Console.WriteLine("image: Convert PDF to JPG files.");
+            Console.WriteLine("-p: Pdf file.");
+            Console.WriteLine("-d: Save directory.");
+            Console.WriteLine("-s: Image size parameter (optional). You can see more size options with \"verxpdf --help image-config\".");
+            Console.WriteLine("{Width}x{Height}: Creates a JPG image with the specified size in pixels. Example: 1000x1000.");
+            Console.WriteLine("-q: Image quality parameter (optional). Must to be used with size parameter.");
+            Console.WriteLine("\tlow: Low image quality (faster) - Divide the number of pixels by 4;");
+            Console.WriteLine("\tnormal: Normal image quality (default option) - Uses the size specified in the size parameter;");
+            Console.WriteLine("\thigh: High image quality (slower) - Multiplies the number of pixels by 4.");
+            Console.WriteLine("HOW TO USE: verxpdf image [-p <PDF-FILE>] [-d <DESTINATION-DIRECTORY>] [-s <SIZE> OPTIONAL] [-q <QUALITY> OPTIONAL]");
+            Console.WriteLine("The parameters do not have a defined order of use, except for the main parameter \"image\".");
         }
     }
 }
