@@ -46,12 +46,10 @@ namespace VerxPDF.Executors.Help
 
         public override void Help()
         {
-            Console.WriteLine("Help:");
-            Console.WriteLine("\t --help: Help parameter, which shows all available options and parameters.");
-            Console.WriteLine("\t --help {option} (optional): Shows the help for a specific option.");
-            Console.WriteLine("\t -- HOW TO USE: verxpdf --help [<OPTION> OPTIONAL]");
-            Console.WriteLine("\t -- EXAMPLE: verxpdf --help image");
-            Console.WriteLine("\t The parameters have a defined order of use.");
+            Console.WriteLine("HELP:");
+            Console.WriteLine("--help: Help parameter, which shows all available options and parameters.");
+            Console.WriteLine("-- HOW TO USE: verxpdf --help [<OPTION> OPTIONAL]");
+            Console.WriteLine("The parameters have a defined order of use.");
         }
     }
 }
