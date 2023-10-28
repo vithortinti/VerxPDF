@@ -34,7 +34,7 @@ git clone https://github.com/vithortinti/VerxPDF.git
 3. Check that the Flexcon library is added to the application. If it isn't, you can get it here, or add it via the [/src/DLLs](https://github.com/vithortinti/VerxPDF/tree/main/src/DLLs) repository path.
 4. Now you can run the existing commands in the application, just do the following:
 ```bash
-dotnet <EXECUTOR-NAME> [PARAMETERS]
+dotnet run <EXECUTOR-NAME> [PARAMETERS]
 ```
 > Note: Executors and parameters in the [How to Use](#how-to-use) section.
 
