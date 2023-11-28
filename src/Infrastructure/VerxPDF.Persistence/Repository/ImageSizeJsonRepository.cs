@@ -8,7 +8,7 @@ namespace VerxPDF.Persistence.Repository
     public class ImageSizeJsonRepository : IImageSizesFileRepository
     {
         private readonly string? _file;
-        private List<ImageConfiguration> _imageConfiguration;
+        private readonly List<ImageConfiguration> _imageConfiguration;
 
         public ImageSizeJsonRepository()
         {
