@@ -4,7 +4,7 @@ VerxPDF is a free, open-source application that offers basic offline PDF editing
 ---
 
 ## Download
-This branch is restricted to the application's source code. If you want to download the application directly, you can find more information about this process [here](https://github.com/vithortinti/VerxPDF.App).
+You can find the available versions and download them [here](https://github.com/vithortinti/VerxPDF/releases).
 
 ---
 
